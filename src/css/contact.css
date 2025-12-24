@@ -1,0 +1,489 @@
+/* Contact Page Styles */
+
+/* Hero Section */
+.contact-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 32, 63, 0.7) 0%,
+    rgba(0, 32, 63, 0.4) 100%
+  );
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+  width: 100%;
+}
+
+.contact-hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.contact-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
+  padding-left: 24px;
+  font-style: italic;
+}
+
+.contact-hero-buttons {
+  display: flex;
+  gap: 16px;
+  padding-left: 24px;
+}
+
+.contact-hero-btn {
+  padding: 14px 32px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-hero-btn.primary {
+  background: #c9a227;
+  color: #00203f;
+}
+
+.contact-hero-btn.primary:hover {
+  background: #d4b033;
+  transform: translateY(-2px);
+}
+
+.contact-hero-btn.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.contact-hero-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Header */
+.jobs-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 0;
+}
+
+.jobs-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jobs-logo {
+  display: flex;
+  align-items: center;
+}
+
+.jobs-logo svg {
+  height: 60px;
+  width: auto;
+}
+
+.jobs-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.jobs-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.jobs-nav a:hover,
+.jobs-nav a.active {
+  color: #f5a623;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+}
+
+/* Contact Info */
+.contact-info {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.contact-info-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00203f;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info-block {
+  margin-bottom: 32px;
+}
+
+.contact-info-block:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #00203f;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #5a6a7a;
+  font-size: 0.95rem;
+}
+
+.contact-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info-icon {
+  width: 20px;
+  height: 20px;
+  color: #00203f;
+  flex-shrink: 0;
+}
+
+.contact-info-link {
+  color: #5a6a7a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info-link:hover {
+  color: #c9a227;
+}
+
+/* Contact Form */
+.contact-form-container {
+  padding: 40px 0;
+}
+
+.contact-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00203f;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form-subtitle {
+  color: #5a6a7a;
+  margin-bottom: 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  background: transparent;
+  color: #00203f;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9aa0a6;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-bottom-color: #c9a227;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit {
+  align-self: flex-start;
+  padding: 16px 48px;
+  background: #c9a227;
+  color: #00203f;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-submit:hover {
+  background: #d4b033;
+  transform: translateY(-2px);
+}
+
+/* Network Section */
+.network-section {
+  padding: 80px 24px;
+  background: #00203f;
+  color: #ffffff;
+}
+
+.network-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.network-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.network-description {
+  max-width: 800px;
+  margin: 0 auto 48px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.network-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.network-countries {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.network-country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.network-country::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #c9a227;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.network-country.main::after {
+  content: "(Main office)";
+  font-size: 0.75rem;
+  color: #c9a227;
+  margin-left: 4px;
+}
+
+.network-map {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.network-map iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 8px;
+  filter: grayscale(20%) contrast(1.1);
+}
+
+.network-map-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* CTA Section */
+.contact-cta {
+  padding: 80px 24px;
+  background: linear-gradient(135deg, #c9a227 0%, #d4b033 100%);
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-cta-btn {
+  display: inline-block;
+  padding: 16px 48px;
+  background: #00203f;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-cta-btn:hover {
+  background: #003366;
+  transform: translateY(-2px);
+}
+
+/* Contact Footer */
+.contact-footer {
+  padding: 24px;
+  background: #00203f;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-footer-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 968px) {
+  .contact-hero-title {
+    font-size: 3rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .network-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero {
+    min-height: 50vh;
+  }
+
+  .contact-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-hero-buttons {
+    flex-direction: column;
+  }
+
+  .contact-hero-btn {
+    text-align: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .network-countries {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cta-title {
+    font-size: 1.5rem;
+  }
+}
