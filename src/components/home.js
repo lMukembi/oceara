@@ -147,9 +147,9 @@ export const Home = () => {
           <a href="/about-us" className="nav-link">
             About Us
           </a>
-          <a href="/stcw-training" className="nav-link">
+          {/* <a href="/stcw-training" className="nav-link">
             STCW Training
-          </a>
+          </a> */}
           <a href="/contact" className="nav-link">
             Contact
           </a>
@@ -175,9 +175,9 @@ export const Home = () => {
             <a href="#jobs" className="btn btn-secondary">
               Find Jobs
             </a>
-            {/* <a href="/stcw-training" className="btn btn-secondary">
+            <a href="/stcw-training" className="btn btn-secondary">
               STCW Training
-            </a> */}
+            </a>
           </div>
         </div>
         <div className="hero-dots">
