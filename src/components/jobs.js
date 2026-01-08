@@ -166,9 +166,9 @@ const Jobs = () => {
             <h1>Jobs</h1>
             <p>All Aboard for Exciting Job Opportunities!</p>
             <div className="jobs-hero-buttons">
-              <a href="/apply" className="btn-primary">
+              <Link to="/apply" className="btn-primary">
                 Apply Now
-              </a>
+              </Link>
               <a href="#positions" className="btn-secondary">
                 Open Positions
               </a>
@@ -230,9 +230,9 @@ const Jobs = () => {
                   <div className="position-card-content">
                     <h3>{position.title}</h3>
                     <p className="position-company">{position.company}</p>
-                    <a href="/apply" className="read-more">
-                      Apply now
-                    </a>
+                    <Link to="/apply" className="read-more">
+                      Apply Now
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -270,9 +270,9 @@ const Jobs = () => {
               Join thousands of successful candidates who have launched their
               cruise ship careers with Oceara Cruises.
             </p>
-            <a href="/apply" className="btn-apply">
+            <Link to="/apply" className="btn-apply">
               Apply Now
-            </a>
+            </Link>
           </div>
         </section>
 

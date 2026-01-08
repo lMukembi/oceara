@@ -332,18 +332,18 @@ export const News = () => {
         <div className="news-footer-bottom">
           <p>&copy; 2025 Oceara Cruises. All rights reserved.</p>
           <div className="news-footer-social">
-            <a href="https://facebook.com" aria-label="Facebook">
+            <Link to="https://facebook.com" aria-label="Facebook">
               f
-            </a>
-            <a href="https://instagram.com" aria-label="Instagram">
+            </Link>
+            <Link to="https://instagram.com" aria-label="Instagram">
               in
-            </a>
-            <a href="https://linkedin.com" aria-label="LinkedIn">
+            </Link>
+            <Link to="https://linkedin.com" aria-label="LinkedIn">
               Li
-            </a>
-            <a href="https://x.com" aria-label="Twitter">
+            </Link>
+            <Link to="https://x.com" aria-label="Twitter">
               X
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

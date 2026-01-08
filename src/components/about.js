@@ -330,7 +330,9 @@ export const About = () => {
           Join thousands of successful candidates who have launched their cruise
           ship careers with Oceara Cruises
         </p>
-        <button className="about-cta-btn ">Apply Now</button>
+        <Link to="/apply" className="about-cta-btn">
+          Apply Now
+        </Link>
       </section>
 
       {/* Footer */}

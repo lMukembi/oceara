@@ -156,16 +156,6 @@ export const STCW = () => {
             two-story container for fire protection training, and a swimming
             pool of Olympic dimensions.
             <br />
-            <br />
-            You can find more information about our training center at{" "}
-            <a
-              href="http://www.fire.mk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="stcw-facility-link"
-            >
-              www.fire.mk
-            </a>
           </p>
 
           <div className="stcw-facility-stats">
@@ -232,9 +222,9 @@ export const STCW = () => {
           Join thousands of successful candidates who have launched their cruise
           ship careers with Oceara Cruises.
         </p>
-        <a href="/apply" className="stcw-cta-btn">
+        <Link to="/apply" className="stcw-cta-btn">
           Apply Now
-        </a>
+        </Link>
       </section>
 
       {/* Footer */}

@@ -338,7 +338,7 @@ export const Apply = () => {
         <h2>Ready to Start Your Journey?</h2>
         <p>
           Join thousands of successful candidates who have launched their cruise
-          ship careers with Oceara Cruises
+          ship careers with Oceara Cruises.
         </p>
         <Link to="/contact" className="apply-cta-btn">
           Contact Us

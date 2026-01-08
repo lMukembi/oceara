@@ -93,9 +93,9 @@ export const Mashujaa = () => {
           Join thousands of successful candidates who have launched their cruise
           ship careers with Oceara Cruises.
         </p>
-        <a href="/apply" className="content-cta-btn">
+        <Link to="/apply" className="content-cta-btn">
           Apply Now
-        </a>
+        </Link>
       </section>
 
       {/* Footer */}

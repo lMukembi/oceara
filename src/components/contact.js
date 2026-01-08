@@ -245,9 +245,9 @@ export const Contact = () => {
           Join thousands of successful candidates who have launched their cruise
           ship careers with Oceara Cruises.
         </p>
-        <a href="/apply" className="contact-cta-btn">
+        <Link to="/apply" className="contact-cta-btn">
           Apply Now
-        </a>
+        </Link>
       </section>
 
       {/* Footer */}

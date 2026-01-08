@@ -231,7 +231,7 @@ export const Home = () => {
           ))}
         </div>
         <div className="view-all">
-          <a href="/news">View all news</a>
+          <Link to="/news">View all news</Link>
         </div>
       </section>
 
@@ -278,15 +278,15 @@ export const Home = () => {
               </div>
               <div className="job-footer">
                 <span className="job-company">{job.company}</span>
-                <a href="/apply" className="job-link">
+                <Link to="/apply" className="job-link">
                   Apply now
-                </a>
+                </Link>
               </div>
             </article>
           ))}
         </div>
         <div className="view-all">
-          <a href="/jobs">View all jobs</a>
+          <Link to="/jobs">View all jobs</Link>
         </div>
       </section>
 
@@ -318,9 +318,9 @@ export const Home = () => {
           Join thousands of successful candidates who have launched their cruise
           ship careers with Oceara Cruises.
         </p>
-        <a href="/apply" className="btn btn-primary">
+        <Link to="/apply" className="btn btn-primary">
           Apply Now
-        </a>
+        </Link>
       </section>
 
       {/* Footer */}
