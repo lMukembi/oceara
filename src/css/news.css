@@ -7,7 +7,6 @@
 }
 
 /* Header */
-/* Header */
 .header {
   position: absolute;
   top: 0;
@@ -475,11 +474,11 @@
 }
 
 @media (max-width: 992px) {
-  .news-header {
+  .header {
     padding: 15px 40px;
   }
 
-  .news-nav {
+  .nav {
     display: none;
   }
 
@@ -563,7 +562,7 @@
 }
 
 @media (max-width: 480px) {
-  .news-header {
+  .header {
     padding: 15px 20px;
   }
 

@@ -4,7 +4,7 @@ import managerPortrait from "../assets/manager-portrait.jpg";
 import trainingClassroom from "../assets/training-classroom.jpg";
 import crewService from "../assets/crew-service.jpg";
 import { Link } from "react-router-dom";
-import { CruiseLogo } from "./logo";
+import OcearaLogo from "../assets/oceara-logo.jpeg";
 
 const partnerLogos = [
   "https://cruise.mk/wp-content/uploads/2023/08/princess-1.png",
@@ -25,9 +25,7 @@ export const About = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <CruiseLogo />
-            <span className="logo-text">Oceara Cruises</span>
-            <span className="logo-tagline">live your dream</span>
+            <img src={OcearaLogo} alt="Oceara Cruises" />
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -79,37 +77,57 @@ export const About = () => {
         <div className="container">
           <div className="about-content-card fade-up">
             <p className="about-content-text">
-              Founded in October 1997 as Oceara Cruises and Co. in Vienna,
-              Austria, we swiftly evolved into a premier tour operator in the
-              Balkans. Recognizing the demand, we expanded our services to
-              include student programs and recruitment for global cruise lines.
+              Founded in October 1997, Oceara Cruises began its journey in
+              Norway, inspired by the country’s deep maritime heritage and
+              strong connection to the sea. What started as a bold vision
+              quickly grew into a trusted name in cruise operations, expanding
+              beyond traditional travel to offer specialized programs, including
+              student opportunities and international recruitment for leading
+              global cruise lines. This evolution reflects our commitment to
+              connecting people, cultures, and oceans worldwide.
             </p>
             <p className="about-content-text">
-              Today, as Oceara Cruises, headquartered in Skopje, Macedonia,
-              we're proud to be{" "}
-              <strong>the largest recruitment agency in the Balkans</strong>,
-              with a presence in multiple countries. Annually, we employ over
-              1,200 individuals for leading cruise companies and are the
-              preferred agency for top hospitality brands in the Middle East.
+              Today, as Oceara Cruises, headquartered in Bergen, Norway, we're
+              proud to be{" "}
+              <strong>the largest cruise line in the Balkans</strong>, with a
+              presence in multiple countries. Annually, we employ over 1,200
+              individuals and are the preferred agency for top hospitality
+              brands in Europe and the Middle East.
             </p>
             <ul className="about-stats-list">
               <li className="about-stat-item">
                 <span className="stat-text">
-                  Over 85% of our clients have trusted us for more than 25
-                  years, a testament to our commitment to excellence.
+                  For more than 25 years, Oceara Cruises has built strong and
+                  lasting relationships with our clients, grounded in trust,
+                  reliability, and exceptional service. Today, over 85% of those
+                  we work with have remained loyal to us for more than two
+                  decades, choosing to sail with us time and time again. This
+                  long-standing confidence reflects our unwavering commitment to
+                  excellence, personalized experiences, and consistent quality
+                  across every journey we offer. Our clients’ continued trust
+                  motivates us to innovate, improve, and uphold the high
+                  standards that have defined Oceara Cruises throughout our
+                  history.
                 </span>
               </li>
               <li className="about-stat-item">
                 <span className="stat-text">
-                  Around 70% of our staff have been with us for over 15 years,
-                  ensuring continuity and expertise in the services we offer.
+                  Nearly 70% of our team members have been part of Oceara
+                  Cruises for more than 15 years, providing exceptional
+                  continuity, deep industry knowledge, and proven expertise.
+                  Their long-term dedication ensures consistent service quality,
+                  strong operational experience, and a trusted, professional
+                  approach across all areas of our operations.
                 </span>
               </li>
             </ul>
             <p className="about-content-text" style={{ marginTop: "1.5rem" }}>
-              With a keen understanding of the hospitality industry's dynamics,
-              we provide tailored solutions that meet the unique needs of each
-              client.
+              With a deep understanding of the hospitality industry’s evolving
+              landscape, we deliver customized solutions designed to address the
+              specific goals and challenges of every client. Our flexible
+              approach ensures efficient, practical, and results-driven services
+              that align seamlessly with each client’s unique operational and
+              business needs.
             </p>
           </div>
         </div>
@@ -129,7 +147,7 @@ export const About = () => {
             <div className="manager-content fade-up fade-up-delay-1">
               <p className="manager-label">Message</p>
               <h3 className="manager-name">
-                Zoran Kochoski - Manager of Oceara Cruises
+                Sammy Tyler - CEO of Oceara Cruises
               </h3>
               <p className="manager-quote">
                 <strong>
@@ -176,17 +194,34 @@ export const About = () => {
                 Oceara Cruises Hospitality Academy
               </h3>
               <p className="service-description">
-                Our "Oceara Cruises Hospitality Academy" aims to nurture the
-                next generation of hospitality professionals from the Balkans,
-                furthering our commitment to excellence in service.
+                The Oceara Cruises Hospitality Academy is designed to nurture
+                and develop the next generation of hospitality professionals
+                from the Balkans, reflecting our strong commitment to service
+                excellence. Through focused training, mentorship, and real-world
+                experience, the academy equips aspiring talent with the skills,
+                knowledge, and professionalism required to succeed in the global
+                hospitality industry. By investing in education and career
+                growth, we aim to empower individuals, elevate regional talent,
+                and uphold the highest standards of guest experience across our
+                operations.
               </p>
             </div>
             <div className="service-card fade-up fade-up-delay-2">
               <h3 className="service-title">Oceara Cruises STCW Training</h3>
               <p className="service-description">
-                Our "Oceara Cruises STCW Training" is an approved training
-                providing instruction and practical training in relevant safety
-                skills necessary to work onboard a vessel.
+                The Oceara Cruises STCW Training Program is an approved and
+                comprehensive certification initiative created to prepare
+                individuals for their specific roles onboard cruise vessels. The
+                program is carefully structured to meet international maritime
+                standards and combines in-depth classroom instruction with
+                hands-on practical training. This balanced approach ensures
+                participants gain both theoretical knowledge and real-world
+                skills essential for working at sea. Before joining a vessel,
+                all trainees are fully certified in safety procedures, emergency
+                response, and professional competencies required for their
+                positions. Through this program, Oceara Cruises ensures every
+                crew member is well prepared, confident, and equipped to uphold
+                the highest standards of safety and service.
               </p>
             </div>
           </div>
@@ -205,16 +240,33 @@ export const About = () => {
             Developing People, Nurturing Excellence
           </h2>
           <p className="two-column-text fade-up fade-up-delay-1">
-            At our cruise ship employment agency, training embodies more than
-            just skill development—it's about fostering a culture of growth
-            deeply intertwined with our vision, values, and mission. Our
-            training programs are meticulously crafted to encompass technical
-            knowledge, competencies, behaviors, and cultural alignment.
+            At our cruise ship employment agency, training represents far more
+            than simple skill development; it is a foundation for long-term
+            growth and professional excellence. Our approach is deeply connected
+            to our vision, values, and mission, ensuring every individual
+            develops not only technical expertise but also the mindset required
+            to thrive in the cruise industry. Each training program is
+            meticulously designed to cover essential knowledge, practical
+            competencies, professional behaviors, and strong cultural alignment.
+            By focusing on both performance and personal development, we
+            cultivate confident, adaptable professionals who are prepared to
+            meet industry demands while consistently delivering exceptional
+            service and upholding the highest standards onboard.
           </p>
           <p className="two-column-text fade-up fade-up-delay-2">
-            We believe that investing in people development yields tangible
-            business results, empowering individuals and teams, fostering
-            positivity, and reflecting our commitment to continuous improvement.
+            We believe that investing in people development delivers meaningful
+            and measurable business results while creating a strong foundation
+            for long-term success. By empowering individuals and teams through
+            continuous learning, mentorship, and growth opportunities, we
+            cultivate confidence, accountability, and high performance. This
+            investment fosters a positive and motivating work environment where
+            employees feel valued and inspired to contribute their best efforts.
+            Our focus on development also strengthens collaboration, innovation,
+            and adaptability across the organization. Ultimately, our commitment
+            to people development reflects our dedication to continuous
+            improvement, ensuring both our workforce and our business evolve
+            together while consistently meeting the highest standards of
+            excellence.
           </p>
         </div>
       </section>
@@ -232,18 +284,19 @@ export const About = () => {
             Navigating Careers, Guiding Futures!
           </h2>
           <p className="two-column-text fade-up fade-up-delay-1">
-            Aligning employees with our organization's vision, values, and
-            mission is paramount. Our employee branding efforts serve as an
-            internal communication strategy, motivating our team to embody our
-            corporate ethos in interactions with customers, stakeholders, and
-            peers.
+            Aligning employees with our organization’s vision, values, and
+            mission is essential to our success. Our employee branding
+            initiatives function as a powerful internal communication strategy,
+            inspiring team members to fully embrace and represent our corporate
+            ethos. By reinforcing shared principles and purpose, we motivate
+            employees to consistently reflect our values in their interactions
+            with customers, stakeholders, and colleagues, strengthening trust,
+            engagement, and a unified organizational culture.
           </p>
           <p className="two-column-text fade-up fade-up-delay-2">
-            At our agency, we provide{" "}
-            <span className="two-column-highlight">FREE</span> training for
-            recruited candidates, ensuring that each individual embodies our
-            values and contributes to our shared vision of excellence in the
-            cruise industry.
+            At our agency, we provide training for recruited candidates,
+            ensuring that each individual embodies our values and contributes to
+            our shared vision of excellence in the cruise industry.
           </p>
         </div>
       </section>

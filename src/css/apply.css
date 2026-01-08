@@ -1,4 +1,4 @@
-/* Apply Page Styles */
+/* ===================== Apply Page Styles ===================== */
 
 /* Hero Section */
 .apply-hero {
@@ -6,6 +6,7 @@
   min-height: 50vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -14,10 +15,7 @@
 .apply-hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(
     135deg,
     rgba(0, 32, 63, 0.7) 0%,
@@ -32,6 +30,7 @@
   margin: 0 auto;
   padding: 120px 24px 80px;
   width: 100%;
+  text-align: left;
 }
 
 .apply-hero-title {
@@ -39,19 +38,16 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 16px;
-  position: relative;
 }
 
 .apply-hero-subtitle {
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 32px;
-  padding-left: 24px;
 }
 
 .apply-hero-btn {
   display: inline-block;
-  margin-left: 24px;
   padding: 14px 32px;
   background: #c9a227;
   color: #00203f;
@@ -175,7 +171,7 @@
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300203f' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 0 center;
+  background-position: right 0.75rem center;
 }
 
 .apply-form-select option {
@@ -190,11 +186,14 @@
 /* File Upload */
 .apply-file-upload {
   border: 2px dashed #e0e0e0;
-  padding: 32px;
+  padding: 28px;
   text-align: center;
+  display: flex;
+  align-items: center;
   border-radius: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
 }
 
 .apply-file-upload:hover {
@@ -205,7 +204,7 @@
 .apply-file-upload-icon {
   width: 48px;
   height: 48px;
-  margin: 0 auto 16px;
+  margin-bottom: 16px;
   color: #c9a227;
 }
 
@@ -325,16 +324,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsl(0, 0%, 100%);
+  background: #fff;
   border-radius: 0.5rem;
   padding: 1rem;
-  box-shadow: 0 2px 8px hsla(220, 60%, 20%, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
 
 .partner-logo:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 16px hsla(220, 60%, 20%, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .partner-logo img {
@@ -434,10 +433,21 @@
   }
 
   .partner-logo {
+    width: 120px;
     height: 40px;
   }
 
   .apply-cta h2 {
     font-size: 1.75rem;
+  }
+}
+
+/* Animation */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

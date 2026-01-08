@@ -6,20 +6,8 @@
   margin-bottom: 1rem;
 }
 
-.logo-text {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.logo-tagline {
-  font-size: 10px;
-  letter-spacing: 1px;
-  opacity: 0.8;
-}
-
-.logo-icon {
-  width: 60px;
-  height: 60px;
+.logo img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
 }

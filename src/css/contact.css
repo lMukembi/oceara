@@ -39,7 +39,6 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 16px;
-  position: relative;
 }
 
 .contact-hero-subtitle {
@@ -66,6 +65,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  border-radius: 6px;
 }
 
 .contact-hero-btn.primary {
@@ -90,7 +90,7 @@
 }
 
 /* Header */
-.jobs-header {
+.header {
   position: absolute;
   top: 0;
   left: 0;
@@ -99,7 +99,7 @@
   padding: 1.5rem 0;
 }
 
-.jobs-header-inner {
+.header-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -108,22 +108,12 @@
   align-items: center;
 }
 
-.jobs-logo {
-  display: flex;
-  align-items: center;
-}
-
-.jobs-logo svg {
-  height: 60px;
-  width: auto;
-}
-
-.jobs-nav {
+.nav {
   display: flex;
   gap: 2rem;
 }
 
-.jobs-nav a {
+.nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -133,8 +123,8 @@
   transition: color 0.3s ease;
 }
 
-.jobs-nav a:hover,
-.jobs-nav a.active {
+.nav a:hover,
+.nav a.active {
   color: #f5a623;
 }
 
@@ -252,13 +242,13 @@
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 16px 0;
+  padding: 16px;
   font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid #e0e0e0;
-  background: transparent;
+  border: 1px solid #e0e0e0;
+  background: #fff;
   color: #00203f;
-  transition: border-color 0.3s ease;
+  border-radius: 6px;
+  transition: all 0.3s ease;
   outline: none;
 }
 
@@ -269,11 +259,12 @@
 
 .form-input:focus,
 .form-textarea:focus {
-  border-bottom-color: #c9a227;
+  border-color: #c9a227;
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.3);
 }
 
 .form-textarea {
-  min-height: 120px;
+  min-height: 140px;
   resize: vertical;
 }
 
@@ -288,12 +279,20 @@
   letter-spacing: 1px;
   border: none;
   cursor: pointer;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
 .form-submit:hover {
   background: #d4b033;
   transform: translateY(-2px);
+}
+
+/* Status Message */
+.status-message {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #00a0dc;
 }
 
 /* Network Section */
@@ -381,12 +380,6 @@
   filter: grayscale(20%) contrast(1.1);
 }
 
-.network-map-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.25rem;
-  text-align: center;
-}
-
 /* CTA Section */
 .contact-cta {
   padding: 80px 24px;
@@ -420,6 +413,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
@@ -483,7 +477,7 @@
     grid-template-columns: 1fr;
   }
 
-  .contact-cta-title {
-    font-size: 1.5rem;
+  .contact-cta h2 {
+    font-size: 1.75rem;
   }
 }

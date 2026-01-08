@@ -3,7 +3,10 @@ import { Helmet } from "react-helmet";
 import contactHero from "../assets/contact-hero.jpg";
 import "../css/contact.css";
 import { Link } from "react-router-dom";
-import { CruiseLogo } from "./logo";
+import OcearaLogo from "../assets/oceara-logo.jpeg";
+// import ContactHero from "../assets/contact-hero.jpeg";
+
+import emailjs from "@emailjs/browser";
 
 const countries = [
   { name: "Macedonia", main: true },
@@ -37,14 +40,40 @@ export const Contact = () => {
     message: "",
   });
 
+  const [statusMessage, setStatusMessage] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+
+    // EmailJS send
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID", // replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // replace with your EmailJS template ID
+        formData,
+        "YOUR_PUBLIC_KEY" // replace with your EmailJS public key
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setStatusMessage("Message sent successfully!");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (err) => {
+          console.error("FAILED...", err);
+          setStatusMessage("Failed to send message. Please try again.");
+        }
+      );
   };
 
   return (
@@ -61,15 +90,11 @@ export const Contact = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <CruiseLogo />
-            <span className="logo-text">Oceara Cruises</span>
-            <span className="logo-tagline">live your dream</span>
+            <img src={OcearaLogo} alt="Oceara Cruises" />
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
-            <Link to="/jobs" activeClassName="active">
-              Jobs
-            </Link>
+            <Link to="/jobs">Jobs</Link>
             <Link to="/news">News</Link>
             <Link to="/about-us">About Us</Link>
             {/* <Link to="/stcw-training">STCW Training</Link> */}
@@ -87,10 +112,10 @@ export const Contact = () => {
           <h1 className="contact-hero-title">Contact</h1>
           <p className="contact-hero-subtitle">Where Careers Set Sail!</p>
           <div className="contact-hero-buttons">
-            <a href="#contact" className="contact-hero-btn primary">
+            <a href="#get" className="contact-hero-btn primary">
               Let's Connect
             </a>
-            <a href="#contact" className="contact-hero-btn secondary">
+            <a href="#network" className="contact-hero-btn secondary">
               Our Network
             </a>
           </div>
@@ -100,127 +125,9 @@ export const Contact = () => {
       {/* Contact Section */}
       <section id="get" className="contact-section">
         <div className="contact-grid">
-          {/* Contact Info */}
           <div className="contact-info">
-            <h2 className="contact-info-title">Contact Information</h2>
-
-            <div className="contact-info-block">
-              <h4 className="contact-info-label">Emergencies Contact:</h4>
-              <div className="contact-info-item">
-                <svg
-                  className="contact-info-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-                <span>Mr.ZORAN KOCOSKI</span>
-              </div>
-              <div className="contact-info-item">
-                <svg
-                  className="contact-info-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <a href="tel:+38970206108" className="contact-info-link">
-                  +389 70 206 108
-                </a>
-              </div>
-              <div className="contact-info-item">
-                <svg
-                  className="contact-info-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <a href="tel:+38978454426" className="contact-info-link">
-                  +389 78 454 426
-                </a>
-              </div>
-            </div>
-
-            <div className="contact-info-block">
-              <h4 className="contact-info-label">Head Office:</h4>
-              <div className="contact-info-item">
-                <svg
-                  className="contact-info-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                  />
-                </svg>
-                <a href="tel:+254791044712" className="contact-info-link">
-                  +254 791044712
-                </a>
-              </div>
-              <div className="contact-info-item">
-                <svg
-                  className="contact-info-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <a
-                  href="mailto:ocearacruises.kenya@gmail.com"
-                  className="contact-info-link"
-                >
-                  ocearacruises.kenya@gmail.com
-                </a>
-              </div>
-              <div className="contact-info-item">
-                <svg
-                  className="contact-info-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
-                <span>Mirage Towers – Tower 2 M2 unit 15A, Nairobi</span>
-              </div>
-            </div>
+            {/* <img src={} alt="Contact Oceara Cruises" /> */}
           </div>
-
-          {/* Contact Form */}
           <div className="contact-form-container">
             <h2 className="contact-form-title">Contact Form</h2>
             <p className="contact-form-subtitle">
@@ -284,9 +191,13 @@ export const Contact = () => {
                   required
                 />
               </div>
+
               <button type="submit" className="form-submit">
                 Send Message
               </button>
+              {statusMessage && (
+                <p className="status-message">{statusMessage}</p>
+              )}
             </form>
           </div>
         </div>
@@ -332,7 +243,7 @@ export const Contact = () => {
         <h2>Ready to Start Your Journey?</h2>
         <p>
           Join thousands of successful candidates who have launched their cruise
-          ship careers with Oceara Cruises
+          ship careers with Oceara Cruises.
         </p>
         <a href="/apply" className="contact-cta-btn">
           Apply Now

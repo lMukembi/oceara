@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import newsHero from "../assets/news-hero.jpeg";
 import "../css/news.css";
 import { Link } from "react-router-dom";
-import { CruiseLogo } from "./logo";
+import OcearaLogo from "../assets/oceara-logo.jpeg";
 
 const newsArticles = [
   {
@@ -13,15 +13,17 @@ const newsArticles = [
     excerpt:
       "As 2025 draws to a close, in only 316 days, our general inbox - info@ocearacruises.com.mk - has received more than 500,000 emails from applicants across the globe!",
     date: "12.11.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=300&fit=crop",
   },
   {
     id: 2,
-    title: "Happy Mashujaa Day from all of us at Oceara Cruises!",
+    title: "Happy Mashujaa Day from Oceara Cruises!",
     excerpt:
       "To all our Mashujaa — we see you, we appreciate you, and we celebrate you.",
     date: "07.11.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=300&fit=crop",
   },
@@ -31,6 +33,7 @@ const newsArticles = [
     excerpt:
       "Explore global career opportunities with Royal Caribbean, Carnival Cruise Line & Princess Cruises. Apply now for cruise ship jobs via Oceara Cruises!",
     date: "07.11.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=400&h=300&fit=crop",
   },
@@ -39,6 +42,7 @@ const newsArticles = [
     title: "Employment Presentation for Zimbabwe",
     excerpt: "Are you a Zimbabwean dreaming of working on a cruise ship?",
     date: "07.07.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1599566150163-29194dcabd36?w=400&h=300&fit=crop",
   },
@@ -48,6 +52,7 @@ const newsArticles = [
     excerpt:
       "Oceara Cruises - Important notice for all candidates regarding application procedures.",
     date: "03.07.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=400&h=300&fit=crop",
   },
@@ -57,6 +62,7 @@ const newsArticles = [
     excerpt:
       "Oceara Cruises proudly launches a new global initiative – Working with the Youth – Shaping the Future.",
     date: "02.07.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
   },
@@ -67,6 +73,7 @@ const newsArticles = [
     excerpt:
       "Oceara Cruises celebrates International Seafarer's Day by honoring the brave men and women who work at sea.",
     date: "25.06.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop",
   },
@@ -76,24 +83,18 @@ const newsArticles = [
     excerpt:
       "Today, on June 1st, we join all Kenyans in commemorating Madaraka Day—a momentous occasion.",
     date: "02.06.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=400&h=300&fit=crop",
   },
-  {
-    id: 9,
-    title: "Employment Opportunities with Royal Caribbean Cruise Line",
-    excerpt:
-      "Are you seeking a new challenge and a remarkable opportunity to travel the World and make money?",
-    date: "20.05.2025",
-    image:
-      "https://images.unsplash.com/photo-1580541631950-7282082b53ce?w=400&h=300&fit=crop",
-  },
+
   {
     id: 10,
     title: "Important Reminder – Oceara Cruises Head Office",
     excerpt:
       "We are currently receiving over 2,000 applications per day via our official email and website.",
     date: "24.04.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
   },
@@ -103,17 +104,9 @@ const newsArticles = [
     excerpt:
       "Launch Your Career at Sea with exciting culinary and F&B opportunities.",
     date: "11.04.2025",
+    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
     image:
       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
-  },
-  {
-    id: 12,
-    title: "CARNIVAL CRUISE LINE – NEW VARIOUS OPEN POSITIONS",
-    excerpt:
-      "Explore new job openings with Carnival Cruise Line across multiple departments.",
-    date: "04.04.2025",
-    image:
-      "https://images.unsplash.com/photo-1559599746-c0f31be35dcd?w=400&h=300&fit=crop",
   },
 ];
 
@@ -151,9 +144,7 @@ export const News = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <CruiseLogo />
-            <span className="logo-text">Oceara Cruises</span>
-            <span className="logo-tagline">live your dream</span>
+            <img src={OcearaLogo} alt="Oceara Cruises" />
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -212,7 +203,7 @@ export const News = () => {
                 <span className="news-card-date">{article.date}</span>
                 <h3>{article.title}</h3>
                 <p>{article.excerpt}</p>
-                <a href="#news" className="news-card-link">
+                <a href={article.url} className="news-card-link">
                   Read More
                 </a>
               </div>

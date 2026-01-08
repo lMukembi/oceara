@@ -6,6 +6,8 @@ import Jobs from "./components/jobs";
 import { News } from "./components/news";
 import { About } from "./components/about";
 import { Apply } from "./components/apply";
+import { Mashujaa } from "./components/mashujaa";
+import { STCW } from "./components/stcw";
 
 export const Paths = () => {
   return (
@@ -16,7 +18,12 @@ export const Paths = () => {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/news" element={<News />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/stcw-training" element={<STCW />} />
         <Route path="/apply" element={<Apply />} />
+        <Route
+          path="/news/happy-mashujaa-day-from-ocearia-cruises/"
+          element={<Mashujaa />}
+        />
       </Routes>
     </Router>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/home.css";
 import heroBg from "../assets/hero-bg.jpg";
-import { CruiseLogo } from "./logo";
+import OcearaLogo from "../assets/oceara-logo.jpeg";
 
 // Hero slide data
 const heroSlides = [
@@ -132,9 +132,7 @@ export const Home = () => {
       {/* Header */}
       <header className="header">
         <div className="logo">
-          <CruiseLogo />
-          <span className="logo-text">Oceara Cruises</span>
-          <span className="logo-tagline">live your dream</span>
+          <img src={OcearaLogo} alt="Oceara Cruises" />
         </div>
         <nav className="nav">
           <a href="/" className="nav-link active">
@@ -149,9 +147,9 @@ export const Home = () => {
           <a href="/about-us" className="nav-link">
             About Us
           </a>
-          {/* <a href="/stcw-training" className="nav-link">
+          <a href="/stcw-training" className="nav-link">
             STCW Training
-          </a> */}
+          </a>
           <a href="/contact" className="nav-link">
             Contact
           </a>
@@ -177,9 +175,9 @@ export const Home = () => {
             <a href="#jobs" className="btn btn-secondary">
               Find Jobs
             </a>
-            <a href="#training" className="btn btn-secondary">
+            {/* <a href="/stcw-training" className="btn btn-secondary">
               STCW Training
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="hero-dots">

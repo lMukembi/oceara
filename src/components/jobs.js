@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import jobsHero from "../assets/jobs-hero.jpeg";
 import "../css/jobs.css";
 import { Link } from "react-router-dom";
-import { CruiseLogo } from "./logo";
+import OcearaLogo from "../assets/oceara-logo.jpeg";
 
 // Cruise lines data
 const cruiseLines = [
@@ -143,9 +143,7 @@ const Jobs = () => {
         <header className="header">
           <div className="header-inner">
             <div className="logo">
-              <CruiseLogo />
-              <span className="logo-text">Oceara Cruises</span>
-              <span className="logo-tagline">live your dream</span>
+              <img src={OcearaLogo} alt="Oceara Cruises" />
             </div>
             <nav className="nav">
               <Link to="/">Home</Link>

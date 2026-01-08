@@ -126,7 +126,6 @@
 /* About Content Section */
 .about-content-section {
   padding: 4rem 0;
-  background: hsl(220, 20%, 97%);
 }
 
 .about-content-card {
@@ -449,7 +448,6 @@
   }
 }
 
-/* CTA Section */
 /* CTA Section */
 .about-cta {
   padding: 80px 24px;

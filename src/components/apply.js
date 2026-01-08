@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import applyHero from "../assets/apply-hero.jpg";
+import emailjs from "@emailjs/browser";
 import "../css/apply.css";
-import { CruiseLogo } from "./logo";
+import OcearaLogo from "../assets/oceara-logo.jpeg";
 
 const positions = [
   "Select Position",
@@ -19,7 +20,6 @@ const positions = [
   "Other",
 ];
 
-// Partners logo
 const partnerLogos = [
   "https://cruise.mk/wp-content/uploads/2023/08/princess-1.png",
   "https://cruise.mk/wp-content/uploads/2023/08/p0-1.png",
@@ -40,28 +40,94 @@ export const Apply = () => {
     phone: "",
     subject: "",
     message: "",
-    cv: File | null,
+    cvName: "",
+    cvLink: "",
     agreeToPrivacy: false,
   });
 
   const handleChange = (e) => {
-    const { name, value, type } = e.target;
+    const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
+      setFormData({ ...formData, [name]: checked });
     } else {
       setFormData({ ...formData, [name]: value });
     }
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files?.[0] || null;
-    setFormData({ ...formData, cv: file });
+  const handleFileChange = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+      alert("CV must be under 5MB");
+      return;
+    }
+
+    const uploadData = new FormData();
+    uploadData.append("file", file);
+    uploadData.append("upload_preset", "YOUR_UPLOAD_PRESET");
+    uploadData.append("folder", "cv_uploads");
+
+    try {
+      const response = await fetch(
+        "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/auto/upload",
+        { method: "POST", body: uploadData }
+      );
+      const data = await response.json();
+      setFormData((prev) => ({
+        ...prev,
+        cvName: file.name,
+        cvLink: data.secure_url,
+      }));
+    } catch (error) {
+      console.error(error);
+      alert("CV upload failed. Please try again.");
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Application submitted:", formData);
-    // Handle form submission
+
+    if (!formData.cvLink) {
+      alert("Please upload your CV first");
+      return;
+    }
+
+    const templateParams = {
+      position: formData.position,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+      cv_link: formData.cvLink,
+    };
+
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        templateParams,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(() => {
+        alert("Application submitted successfully!");
+        setFormData({
+          position: "",
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          cvName: "",
+          cvLink: "",
+          agreeToPrivacy: false,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to submit application");
+      });
   };
 
   return (
@@ -78,9 +144,7 @@ export const Apply = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <CruiseLogo />
-            <span className="logo-text">Oceara Cruises</span>
-            <span className="logo-tagline">live your dream</span>
+            <img src={OcearaLogo} alt="Oceara Cruises" />
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -215,11 +279,11 @@ export const Apply = () => {
                 <line x1="12" y1="3" x2="12" y2="15" />
               </svg>
               <p className="apply-file-upload-text">
-                {formData.cv ? formData.cv.name : "Upload your CV"}
+                {formData.cvName || "Upload your CV"}
               </p>
-              <p className="apply-file-upload-hint">
-                Accepted file types: pdf, doc, docx, jpg, png
-              </p>
+              {formData.cvLink && (
+                <small style={{ color: "green" }}>CV uploaded ✓</small>
+              )}
             </label>
           </div>
 
@@ -257,7 +321,6 @@ export const Apply = () => {
             contributions of our partners.
           </p>
           <div className="partners-slider">
-            {/* Double the logos for seamless infinite scroll */}
             {[...partnerLogos, ...partnerLogos].map((logo, index) => (
               <div key={index} className="partner-logo">
                 <img
