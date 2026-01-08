@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/home.css";
 import heroBg from "../assets/hero-bg.jpg";
 import OcearaLogo from "../assets/oceara-logo.jpeg";
+import { Link } from "react-router-dom";
 
 // Hero slide data
 const heroSlides = [
@@ -131,29 +132,19 @@ export const Home = () => {
     <div className="home-page">
       {/* Header */}
       <header className="header">
-        <div className="logo">
-          <img src={OcearaLogo} alt="Oceara Cruises" />
+        <div className="header-inner">
+          <div className="logo">
+            <img src={OcearaLogo} alt="Oceara Cruises" />
+          </div>
+          <nav className="nav">
+            <Link to="/">Home</Link>
+            <Link to="/jobs">Jobs</Link>
+            <Link to="/news">News</Link>
+            <Link to="/about-us">About Us</Link>
+            {/* <Link to="/stcw-training">STCW Training</Link> */}
+            <Link to="/contact">Contact</Link>
+          </nav>
         </div>
-        <nav className="nav">
-          <a href="/" className="nav-link active">
-            Home
-          </a>
-          <a href="/jobs" className="nav-link">
-            Jobs
-          </a>
-          <a href="/news" className="nav-link">
-            News
-          </a>
-          <a href="/about-us" className="nav-link">
-            About Us
-          </a>
-          {/* <a href="/stcw-training" className="nav-link">
-            STCW Training
-          </a> */}
-          <a href="/contact" className="nav-link">
-            Contact
-          </a>
-        </nav>
       </header>
 
       {/* Hero Section */}
@@ -169,15 +160,15 @@ export const Home = () => {
             {heroSlides[activeSlide].description}
           </p>
           <div className="hero-buttons">
-            <a href="/apply" className="btn btn-primary">
+            <Link to="/apply" className="btn btn-primary">
               Apply Now
-            </a>
+            </Link>
             <a href="#jobs" className="btn btn-secondary">
               Find Jobs
             </a>
-            <a href="/stcw-training" className="btn btn-secondary">
+            <Link to="/stcw-training" className="btn btn-secondary">
               STCW Training
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-dots">

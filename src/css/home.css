@@ -27,14 +27,20 @@
   overflow-x: hidden;
 }
 
-/* ===== Header/Navigation ===== */
-.home-page .header {
+/* Header */
+.header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 20px 60px;
+  padding: 1.5rem 0;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,33 +48,22 @@
 
 .nav {
   display: flex;
-  gap: 40px;
+  gap: 2rem;
 }
 
-.nav-link {
-  color: var(--text-light);
+.nav a {
+  color: #fff;
   text-decoration: none;
-  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 1px;
   text-transform: uppercase;
-  transition: var(--transition);
-  position: relative;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary-yellow);
-}
-
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--primary-yellow);
+.nav a:hover,
+.nav a.active {
+  color: #f5a623;
 }
 
 /* ===== Hero Section ===== */
