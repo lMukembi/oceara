@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import newsHero from "../assets/news-hero.jpeg";
+import newsBg from "../assets/news.jpg";
 import "../css/news.css";
 import { Link } from "react-router-dom";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
+import OcearaLogo from "../assets/oceara-logo.png";
 
 const newsArticles = [
   {
@@ -119,6 +119,7 @@ export const News = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -130,6 +131,9 @@ export const News = () => {
     startIndex + articlesPerPage
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="news-page">
       <Helmet>
@@ -162,7 +166,7 @@ export const News = () => {
       {/* Hero Section */}
       <section
         className="news-hero"
-        style={{ backgroundImage: `url(${newsHero})` }}
+        style={{ backgroundImage: `url(${newsBg})` }}
       >
         <div className="news-hero-overlay"></div>
         <div className="news-hero-content">

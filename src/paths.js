@@ -6,8 +6,11 @@ import Jobs from "./components/jobs";
 import { News } from "./components/news";
 import { About } from "./components/about";
 import { Apply } from "./components/apply";
-import { Mashujaa } from "./components/mashujaa";
 import { STCW } from "./components/stcw";
+import { Luxury } from "./components/luxury";
+import { Sustainability } from "./components/sustainability";
+import { Professional } from "./components/professional";
+import { Destination } from "./components/destination";
 
 export const Paths = () => {
   return (
@@ -21,8 +24,20 @@ export const Paths = () => {
         <Route path="/stcw-training" element={<STCW />} />
         <Route path="/apply" element={<Apply />} />
         <Route
-          path="/news/happy-mashujaa-day-from-ocearia-cruises/"
-          element={<Mashujaa />}
+          path="/news/luxury-experiences-in-the-atlantic"
+          element={<Luxury />}
+        />
+        <Route
+          path="/news/sustainability-and-responsible-cruising-with-oceara-cruises"
+          element={<Sustainability />}
+        />
+        <Route
+          path="/news/professional-crew-training-and-career-development-at-oceara-cruises"
+          element={<Professional />}
+        />
+        <Route
+          path="/news/global-routes-and-destination-experiences-with-oceara-cruises"
+          element={<Destination />}
         />
       </Routes>
     </Router>

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import stcwHero from "../assets/stcw-hero.jpg";
 import stcwFacility from "../assets/stcw-facility.jpg";
 import stcwPool from "../assets/stcw-pool.jpg";
 import stcwClassroom from "../assets/stcw-classroom.jpg";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
+import OcearaLogo from "../assets/oceara-logo.png";
 import "../css/stcw.css";
 
 const courses = [
@@ -38,11 +38,14 @@ const galleryImages = [
 ];
 
 export const STCW = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Helmet>
         <title>
-          STCW Training Centre - Ocearia Cruises | Maritime Safety Certification
+          STCW Training Centre - Oceara Cruises | Maritime Safety Certification
         </title>
         <meta
           name="description"
@@ -94,7 +97,7 @@ export const STCW = () => {
       {/* About Section */}
       <section id="about" className="stcw-about">
         <p className="stcw-about-intro">
-          Ocearia Cruises is the only HP agency in Eastern Europe that has its
+          Oceara Cruises is the only HP agency in Eastern Europe that has its
           training center for training to obtain the so-called STCW
           certificates.
         </p>
@@ -229,7 +232,7 @@ export const STCW = () => {
 
       {/* Footer */}
       <footer className="stcw-footer">
-        <p className="stcw-footer-text">© 2024 Copyright Ocearia Cruises</p>
+        <p className="stcw-footer-text">© 2024 Copyright Oceara Cruises</p>
       </footer>
     </>
   );

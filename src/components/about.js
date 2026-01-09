@@ -1,10 +1,11 @@
+import { useEffect } from "react";
 import "../css/about.css";
-import heroCruise from "../assets/hero-cruise.jpg";
+import aboutBg from "../assets/about.jpg";
 import managerPortrait from "../assets/manager-portrait.jpg";
 import trainingClassroom from "../assets/training-classroom.jpg";
 import crewService from "../assets/crew-service.jpg";
 import { Link } from "react-router-dom";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
+import OcearaLogo from "../assets/oceara-logo.png";
 
 const partnerLogos = [
   "https://cruise.mk/wp-content/uploads/2023/08/princess-1.png",
@@ -19,6 +20,9 @@ const partnerLogos = [
 ];
 
 export const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="about-page">
       {/* Header */}
@@ -43,7 +47,7 @@ export const About = () => {
       {/* Hero Section */}
       <section
         className="about-hero"
-        style={{ backgroundImage: `url(${heroCruise})` }}
+        style={{ backgroundImage: `url(${aboutBg})` }}
       >
         <div className="about-hero-content">
           <h1 className="about-hero-title">About us</h1>

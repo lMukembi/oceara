@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import jobsHero from "../assets/jobs-hero.jpeg";
+import jobsBg from "../assets/jobs.jpg";
 import "../css/jobs.css";
 import { Link } from "react-router-dom";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
+import OcearaLogo from "../assets/oceara-logo.png";
 
 // Cruise lines data
 const cruiseLines = [
@@ -128,6 +128,9 @@ const jobPositions = [
 ];
 
 const Jobs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Helmet>
@@ -160,7 +163,7 @@ const Jobs = () => {
 
         {/* Hero Section */}
         <section className="jobs-hero">
-          <img src={jobsHero} alt="Cruise ship jobs" className="jobs-hero-bg" />
+          <img src={jobsBg} alt="Cruise ship jobs" className="jobs-hero-bg" />
           <div className="jobs-hero-overlay"></div>
           <div className="jobs-hero-content">
             <h1>Jobs</h1>

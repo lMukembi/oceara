@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import contactHero from "../assets/contact-hero.jpg";
+import contactBg from "../assets/contact.jpg";
 import "../css/contact.css";
 import { Link } from "react-router-dom";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
-// import ContactHero from "../assets/contact-hero.jpeg";
+import OcearaLogo from "../assets/oceara-logo.png";
+import contactHero from "../assets/contact-hero.jpg";
 
 import emailjs from "@emailjs/browser";
 
@@ -76,6 +76,10 @@ export const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -106,7 +110,7 @@ export const Contact = () => {
       {/* Hero Section */}
       <section
         className="contact-hero"
-        style={{ backgroundImage: `url(${contactHero})` }}
+        style={{ backgroundImage: `url(${contactBg})` }}
       >
         <div className="contact-hero-content">
           <h1 className="contact-hero-title">Contact</h1>
@@ -126,7 +130,7 @@ export const Contact = () => {
       <section id="get" className="contact-section">
         <div className="contact-grid">
           <div className="contact-info">
-            {/* <img src={} alt="Contact Oceara Cruises" /> */}
+            <img src={contactHero} alt="Contact Oceara Cruises" />
           </div>
           <div className="contact-form-container">
             <h2 className="contact-form-title">Contact Form</h2>

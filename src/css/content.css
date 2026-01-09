@@ -116,9 +116,7 @@
 }
 
 .content-article-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  padding: 30px;
   align-items: start;
 }
 

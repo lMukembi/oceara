@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import applyHero from "../assets/apply-hero.jpg";
+import applyBg from "../assets/apply.jpg";
 import emailjs from "@emailjs/browser";
 import "../css/apply.css";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
+import OcearaLogo from "../assets/oceara-logo.png";
 
 const positions = [
   "Select Position",
@@ -130,6 +130,10 @@ export const Apply = () => {
       });
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -162,7 +166,7 @@ export const Apply = () => {
       {/* Hero Section */}
       <section
         className="apply-hero"
-        style={{ backgroundImage: `url(${applyHero})` }}
+        style={{ backgroundImage: `url(${applyBg})` }}
       >
         <div className="apply-hero-content">
           <h1 className="apply-hero-title">Apply</h1>

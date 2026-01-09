@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import newsHero from "../assets/news-hero.jpeg";
 import "../css/content.css";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
+import OcearaLogo from "../assets/oceara-logo.png";
 
 export const HeadOffice = () => {
   const scrollToArticle = () => {
     document.getElementById("article")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -74,12 +78,6 @@ export const HeadOffice = () => {
               To all our Mashujaa — we see you, we appreciate you, and we
               celebrate you.
             </p>
-          </div>
-          <div className="content-article-image">
-            <img
-              src="https://kouzonkenya.com/wp-content/uploads/2025/11/565158941_793355540197666_3302103674543682761_n-819x1024.webp"
-              alt="Happy Mashujaa Day - Ocearia Cruises celebration graphic with Kenyan flag colors"
-            />
           </div>
         </div>
       </section>

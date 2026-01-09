@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/home.css";
-import heroBg from "../assets/hero-bg.jpg";
-import OcearaLogo from "../assets/oceara-logo.jpeg";
+import homeBg from "../assets/home.jpg";
+import OcearaLogo from "../assets/oceara-logo.png";
 import { Link } from "react-router-dom";
 
 // Hero slide data
@@ -24,32 +24,37 @@ const heroSlides = [
 // News data
 const newsItems = [
   {
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400",
+    image: "https://images.unsplash.com/photo-1667412319085-144022cc8df6?q=80 ",
+    url: "/news/luxury-experiences-in-the-atlantic",
     date: "12.11.2025",
-    title:
-      "Oceara Cruises Reaches Over Half a Million Emails in Just 316 Days!",
+    title: "Luxury Experiences in the Atlantic!",
     excerpt:
-      "Our general inbox has received more than 500,000 emails from applicants across the globe!",
+      "Luxury Experiences in the Atlantic define the essence of what Oceara Cruises offers to travelers seeking refinement, comfort, and unforgettable ocean journeys.",
   },
   {
     image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400",
+    url: "/news/sustainability-and-responsible-cruising-with-oceara-cruises",
     date: "07.11.2025",
-    title: "Happy Mashujaa Day from all of us at Oceara Cruises!",
+    title: "Sustainability and Responsible Cruising with Oceara Cruises!",
     excerpt:
-      "To all our Mashujaa — we see you, we appreciate you, and we celebrate you.",
+      "Sustainability has become a defining priority in modern maritime travel, and Oceara Cruises is committed to shaping a future where luxury cruising and environmental responsibility move forward together.",
   },
   {
     image: "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=400",
+    url: "/news/professional-crew-training-and-career-development-at-oceara-cruises",
     date: "07.11.2025",
-    title: "Cruise Ship Jobs 2025 – Apply Now with Oceara Cruises",
+    title:
+      "Professional Crew Training and Career Development at Oceara Cruises!",
     excerpt:
-      "Explore global career opportunities with Royal Caribbean, Carnival Cruise Line & Princess Cruises.",
+      "A successful cruise experience begins with the people who operate the ship, and Oceara Cruises places exceptional importance on professional crew training and long-term career development.",
   },
   {
-    image: "https://images.unsplash.com/photo-1599566150163-29194dcabd36?w=400",
+    image: "https://images.unsplash.com/photo-1762228015770-abd70f88c4c0?q=80",
+    url: "/news/global-routes-and-destination-experiences-with-oceara-cruises",
     date: "07.07.2025",
-    title: "Employment Presentation for Zimbabwe",
-    excerpt: "Are you a Zimbabwean dreaming of working on a cruise ship?",
+    title: "Global Routes and Destination Experiences with Oceara Cruises!",
+    excerpt:
+      "Oceara Cruises is dedicated to connecting travelers with the world’s most captivating destinations through carefully designed global routes.",
   },
 ];
 
@@ -128,6 +133,10 @@ export const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="home-page">
       {/* Header */}
@@ -151,7 +160,7 @@ export const Home = () => {
       <section className="hero">
         <div
           className="hero-bg"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          style={{ backgroundImage: `url(${homeBg})` }}
         />
         <div className="hero-content">
           <p className="hero-subtitle">{heroSlides[activeSlide].subtitle}</p>
@@ -223,9 +232,9 @@ export const Home = () => {
                 <p className="news-date">{item.date}</p>
                 <h3 className="news-title">{item.title}</h3>
                 <p className="news-excerpt">{item.excerpt}</p>
-                <a href="#news" className="news-link">
+                <Link to={item.url} className="news-link">
                   Read More
-                </a>
+                </Link>
               </div>
             </article>
           ))}
