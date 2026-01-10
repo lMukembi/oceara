@@ -154,7 +154,7 @@ export const Maritime = () => {
 
       {/* Footer */}
       <footer className="content-footer">
-        <p className="content-footer-text">© 2026 Copyright Ocearia Cruises</p>
+        <p className="content-footer-text">© 2026 Copyright Oceara Cruises</p>
       </footer>
     </>
   );

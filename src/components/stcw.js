@@ -49,7 +49,7 @@ export const STCW = () => {
         </title>
         <meta
           name="description"
-          content="Ocearia Cruises STCW Training Centre offers comprehensive maritime safety courses including Fire Fighting, First Aid, Personal Survival, and Security Awareness. MCA UK certified."
+          content="Oceara Cruises STCW Training Centre offers comprehensive maritime safety courses including Fire Fighting, First Aid, Personal Survival, and Security Awareness. MCA UK certified."
         />
         <meta
           name="keywords"
@@ -85,7 +85,7 @@ export const STCW = () => {
       >
         <div className="stcw-hero-content">
           <h1 className="stcw-hero-title">
-            Ocearia Cruises STCW Training Centre
+            Oceara Cruises STCW Training Centre
           </h1>
           <p className="stcw-hero-subtitle">
             Working together – we are stronger!
@@ -109,7 +109,7 @@ export const STCW = () => {
         </p>
 
         <p className="stcw-about-highlight">
-          OCEARIA CRUISES HAS BEEN CONDUCTING THESE TRAININGS SINCE 2009.
+          OCEARA CRUISES HAS BEEN CONDUCTING THESE TRAININGS SINCE 2009.
         </p>
         <p className="stcw-about-text">
           Our Training Center offers the most competitive range of comprehensive
@@ -156,10 +156,10 @@ export const STCW = () => {
         <div className="stcw-facility-container">
           <h2 className="stcw-facility-title">Our Training Facility</h2>
           <p className="stcw-facility-description">
-            The Ocearia Cruises Training Center has an office space of 5,100 m²
-            – a training building with a cafeteria, a training ground, a
-            two-story container for fire protection training, and a swimming
-            pool of Olympic dimensions.
+            The Oceara Cruises Training Center has an office space of 5,100 m² –
+            a training building with a cafeteria, a training ground, a two-story
+            container for fire protection training, and a swimming pool of
+            Olympic dimensions.
             <br />
           </p>
 
