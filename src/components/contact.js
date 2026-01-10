@@ -42,43 +42,46 @@ export const Contact = () => {
 
   const [statusMessage, setStatusMessage] = useState("");
 
+  useEffect(() => {
+    emailjs.init("T65KM733oiQKMSHWO");
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatusMessage("Sending...");
 
-    // EmailJS send
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
     emailjs
-      .send(
-        "YOUR_SERVICE_ID", // replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // replace with your EmailJS template ID
-        formData,
-        "YOUR_PUBLIC_KEY" // replace with your EmailJS public key
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          setStatusMessage("Message sent successfully!");
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            subject: "",
-            message: "",
-          });
-        },
-        (err) => {
-          console.error("FAILED...", err);
-          setStatusMessage("Failed to send message. Please try again.");
-        }
-      );
+      .send("service_j2mtlq9", "template_lws4wtf", templateParams)
+      .then(() => {
+        setStatusMessage("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("ERROR:", error);
+        setStatusMessage(
+          error?.text || "Failed to send message. Please try again."
+        );
+      });
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <>
@@ -94,7 +97,9 @@ export const Contact = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <img src={OcearaLogo} alt="Oceara Cruises" />
+            <Link to="/">
+              <img src={OcearaLogo} alt="Oceara Cruises" />
+            </Link>
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -256,7 +261,7 @@ export const Contact = () => {
 
       {/* Footer */}
       <footer className="contact-footer">
-        <p className="contact-footer-text">© 2024 Copyright Oceara Cruises</p>
+        <p className="contact-footer-text">© 2026 Copyright Oceara Cruises</p>
       </footer>
     </>
   );

@@ -152,6 +152,10 @@
   color: var(--text-light);
 }
 
+.home-btn {
+  border-radius: 6px;
+}
+
 .btn-primary:hover {
   background: #c41a1f;
 }

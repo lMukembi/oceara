@@ -61,7 +61,9 @@ export const STCW = () => {
       <header className="stcw-header">
         <div className="stcw-header-inner">
           <div className="logo">
-            <img src={OcearaLogo} alt="Oceara Cruises" />
+            <Link to="/">
+              <img src={OcearaLogo} alt="Oceara Cruises" />
+            </Link>
           </div>
           <nav className="stcw-nav">
             <Link to="/">Home</Link>
@@ -232,7 +234,7 @@ export const STCW = () => {
 
       {/* Footer */}
       <footer className="stcw-footer">
-        <p className="stcw-footer-text">© 2024 Copyright Oceara Cruises</p>
+        <p className="stcw-footer-text">© 2026 Copyright Oceara Cruises</p>
       </footer>
     </>
   );

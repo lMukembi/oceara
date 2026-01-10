@@ -143,7 +143,9 @@ export const Home = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <img src={OcearaLogo} alt="Oceara Cruises" />
+            <Link to="/">
+              <img src={OcearaLogo} alt="Oceara Cruises" />
+            </Link>
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -327,14 +329,14 @@ export const Home = () => {
           Join thousands of successful candidates who have launched their cruise
           ship careers with Oceara Cruises.
         </p>
-        <Link to="/apply" className="btn btn-primary">
+        <Link to="/apply" className="btn btn-primary home-btn">
           Apply Now
         </Link>
       </section>
 
       {/* Footer */}
       <footer className="footer">
-        <p>© 2024 Copyright Oceara Cruises</p>
+        <p>© 2026 Copyright Oceara Cruises</p>
       </footer>
     </div>
   );

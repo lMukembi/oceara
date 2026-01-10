@@ -180,6 +180,7 @@
 
 .content-cta-btn {
   display: inline-block;
+  border-radius: 6px;
   padding: 16px 48px;
   background: #00203f;
   color: #ffffff;

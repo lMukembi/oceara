@@ -146,7 +146,9 @@ const Jobs = () => {
         <header className="header">
           <div className="header-inner">
             <div className="logo">
-              <img src={OcearaLogo} alt="Oceara Cruises" />
+              <Link to="/">
+                <img src={OcearaLogo} alt="Oceara Cruises" />
+              </Link>
             </div>
             <nav className="nav">
               <Link to="/">Home</Link>
@@ -281,7 +283,7 @@ const Jobs = () => {
 
         {/* Footer */}
         <footer className="jobs-footer">
-          <p>© 2024 Copyright Oceara Cruises</p>
+          <p>© 2026 Copyright Oceara Cruises</p>
         </footer>
       </div>
     </>

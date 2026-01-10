@@ -31,7 +31,9 @@ export const Professional = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <img src={OcearaLogo} alt="Oceara Cruises" />
+            <Link to="/">
+              <img src={OcearaLogo} alt="Oceara Cruises" />
+            </Link>
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -170,7 +172,7 @@ export const Professional = () => {
 
       {/* Footer */}
       <footer className="content-footer">
-        <p className="content-footer-text">© 2024 Copyright Ocearia Cruises</p>
+        <p className="content-footer-text">© 2026 Copyright Ocearia Cruises</p>
       </footer>
     </>
   );

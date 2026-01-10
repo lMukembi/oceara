@@ -356,6 +356,7 @@
 
 .news-cta-btn {
   display: inline-block;
+  border-radius: 6px;
   padding: 16px 50px;
   background: white;
   color: #00bcd4;
@@ -364,6 +365,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
+  border-radius: 6px;
   border-radius: 4px;
   transition: all 0.3s ease;
 }

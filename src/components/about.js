@@ -29,7 +29,9 @@ export const About = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <img src={OcearaLogo} alt="Oceara Cruises" />
+            <Link to="/">
+              <img src={OcearaLogo} alt="Oceara Cruises" />
+            </Link>
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -144,7 +146,7 @@ export const About = () => {
             <div className="manager-image-wrapper fade-up">
               <img
                 src={managerPortrait}
-                alt="Zoran Kochoski"
+                alt="Sammy Tyler - CEO of Oceara Cruises"
                 className="manager-image"
               />
             </div>
@@ -332,7 +334,7 @@ export const About = () => {
         <h2>Ready to Start Your Journey?</h2>
         <p>
           Join thousands of successful candidates who have launched their cruise
-          ship careers with Oceara Cruises
+          ship careers with Oceara Cruises.
         </p>
         <Link to="/apply" className="about-cta-btn">
           Apply Now
@@ -342,7 +344,7 @@ export const About = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <p className="footer-text">© 2024 Copyright Oceara Cruises</p>
+          <p className="footer-text">© 2026 Copyright Oceara Cruises</p>
         </div>
       </footer>
     </div>

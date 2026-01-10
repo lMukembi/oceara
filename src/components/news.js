@@ -4,109 +4,85 @@ import newsBg from "../assets/news.jpg";
 import "../css/news.css";
 import { Link } from "react-router-dom";
 import OcearaLogo from "../assets/oceara-logo.png";
+import emailjs from "@emailjs/browser";
 
 const newsArticles = [
   {
     id: 1,
-    title:
-      "Oceara Cruises Reaches Over Half a Million Emails in Just 316 Days!",
-    excerpt:
-      "As 2025 draws to a close, in only 316 days, our general inbox - info@ocearacruises.com.mk - has received more than 500,000 emails from applicants across the globe!",
+    image: "https://images.unsplash.com/photo-1667412319085-144022cc8df6?q=80 ",
+    url: "/news/luxury-experiences-in-the-atlantic",
     date: "12.11.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
-    image:
-      "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=300&fit=crop",
+    title: "Luxury Experiences in the Atlantic!",
+    excerpt:
+      "Luxury Experiences in the Atlantic define the essence of what Oceara Cruises offers to travelers seeking refinement, comfort, and unforgettable ocean journeys.",
   },
   {
     id: 2,
-    title: "Happy Mashujaa Day from Oceara Cruises!",
-    excerpt:
-      "To all our Mashujaa — we see you, we appreciate you, and we celebrate you.",
+    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400",
+    url: "/news/sustainability-and-responsible-cruising-with-oceara-cruises",
     date: "07.11.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
-    image:
-      "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=300&fit=crop",
+    title: "Sustainability and Responsible Cruising with Oceara Cruises!",
+    excerpt:
+      "Sustainability has become a defining priority in modern maritime travel, and Oceara Cruises is committed to shaping a future where luxury cruising and environmental responsibility move forward together.",
   },
   {
     id: 3,
-    title: "Cruise Ship Jobs 2025 – Apply Now with Oceara Cruises",
-    excerpt:
-      "Explore global career opportunities with Royal Caribbean, Carnival Cruise Line & Princess Cruises. Apply now for cruise ship jobs via Oceara Cruises!",
+    image: "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=400",
+    url: "/news/professional-crew-training-and-career-development-at-oceara-cruises",
     date: "07.11.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
-    image:
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=400&h=300&fit=crop",
+    title:
+      "Professional Crew Training and Career Development at Oceara Cruises!",
+    excerpt:
+      "A successful cruise experience begins with the people who operate the ship, and Oceara Cruises places exceptional importance on professional crew training and long-term career development.",
   },
   {
     id: 4,
-    title: "Employment Presentation for Zimbabwe",
-    excerpt: "Are you a Zimbabwean dreaming of working on a cruise ship?",
+    image: "https://images.unsplash.com/photo-1762228015770-abd70f88c4c0?q=80",
+    url: "/news/global-routes-and-destination-experiences-with-oceara-cruises",
     date: "07.07.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
-    image:
-      "https://images.unsplash.com/photo-1599566150163-29194dcabd36?w=400&h=300&fit=crop",
+    title: "Global Routes and Destination Experiences with Oceara Cruises!",
+    excerpt:
+      "Oceara Cruises is dedicated to connecting travelers with the world’s most captivating destinations through carefully designed global routes.",
   },
   {
     id: 5,
-    title: "Important Notice for All candidates from Kenya",
+    title: "Innovation and Technology at Sea with Oceara Cruises",
     excerpt:
-      "Oceara Cruises - Important notice for all candidates regarding application procedures.",
+      "Innovation and technology play a central role in shaping the modern cruising experience, and Oceara Cruises continues to embrace advanced solutions to enhance safety, efficiency, and guest comfort.",
     date: "03.07.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
+    url: "/news/innovation-and-technology-at-sea-with-oceara-cruises",
     image:
       "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=400&h=300&fit=crop",
   },
   {
     id: 6,
-    title: "Oceara Cruises Launches Global Initiative: Working with the Youth",
+    title: "Personalized Service and Guest Satisfaction at Oceara Cruises.",
     excerpt:
-      "Oceara Cruises proudly launches a new global initiative – Working with the Youth – Shaping the Future.",
+      "Personalized service lies at the heart of every voyage with Oceara Cruises.",
     date: "02.07.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
+    url: "/news/personalized-service-and-guest-satisfaction-at-oceara-cruises",
     image:
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
   },
   {
     id: 7,
-    title:
-      "Celebrating Our Heroes at Sea – Happy International Seafarer's Day!",
+    title: "Maritime Safety and Operational Excellence at Oceara Cruises.",
     excerpt:
-      "Oceara Cruises celebrates International Seafarer's Day by honoring the brave men and women who work at sea.",
+      "Maritime safety is the foundation upon which every Oceara Cruises voyage is built.",
     date: "25.06.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
+    url: "/news/maritime-safety-and-operational-excellence-at-oceara-cruises",
     image:
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop",
   },
   {
     id: 8,
-    title: "Happy Madaraka Day from Oceara Cruises",
+    title: "The Heritage and Vision of Oceara Cruises.",
     excerpt:
-      "Today, on June 1st, we join all Kenyans in commemorating Madaraka Day—a momentous occasion.",
+      "Oceara Cruises is built on a strong maritime heritage and a clear vision for the future of ocean travel.",
     date: "02.06.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
+    url: "/news/the-heritage-and-vision-of-oceara-cruises",
     image:
       "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=400&h=300&fit=crop",
-  },
-
-  {
-    id: 10,
-    title: "Important Reminder – Oceara Cruises Head Office",
-    excerpt:
-      "We are currently receiving over 2,000 applications per day via our official email and website.",
-    date: "24.04.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
-  },
-  {
-    id: 11,
-    title: "Work for Royal Caribbean Group",
-    excerpt:
-      "Launch Your Career at Sea with exciting culinary and F&B opportunities.",
-    date: "11.04.2025",
-    url: "/news/happy-mashujaa-day-from-ocearia-cruises",
-    image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
   },
 ];
 
@@ -114,6 +90,43 @@ export const News = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 8;
+
+  const [formData, setFormData] = useState({
+    email: "",
+  });
+
+  const [statusMessage, setStatusMessage] = useState("");
+
+  useEffect(() => {
+    emailjs.init("T65KM733oiQKMSHWO");
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatusMessage("Sending...");
+
+    const templateParams = {
+      email: formData.email,
+    };
+
+    emailjs
+      .send("service_j2mtlq9", "template_lws4wtf", templateParams)
+      .then(() => {
+        setStatusMessage("Subscribed successfully!");
+        setFormData({
+          email: "",
+        });
+      })
+      .catch((error) => {
+        console.error("ERROR:", error);
+        setStatusMessage(error?.text || "Failed. Please try again.");
+      });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,6 +147,7 @@ export const News = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="news-page">
       <Helmet>
@@ -145,10 +159,12 @@ export const News = () => {
       </Helmet>
 
       {/* Header */}
-      <header className="header">
+      <header className={`header ${isScrolled ? "scrolled" : ""}`}>
         <div className="header-inner">
           <div className="logo">
-            <img src={OcearaLogo} alt="Oceara Cruises" />
+            <Link to="/">
+              <img src={OcearaLogo} alt="Oceara Cruises" />
+            </Link>
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -251,9 +267,14 @@ export const News = () => {
       <section className="news-newsletter">
         <h2>Subscribe to Our Newsletter</h2>
         <p>Get the latest news and updates delivered to your inbox</p>
-        <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-          <input type="email" placeholder="Enter your email address" />
+        <form className="newsletter-form" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            onChange={handleChange}
+            placeholder="Enter your email address"
+          />
           <button type="submit">Subscribe</button>
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
         </form>
       </section>
 
@@ -270,86 +291,8 @@ export const News = () => {
       </section>
 
       {/* Footer */}
-      <footer className="news-footer">
-        <div className="news-footer-content">
-          <div className="news-footer-brand">
-            <img
-              src="https://ocearacruises.com/wp-content/uploads/2024/12/ocearacruises.webp"
-              alt="Oceara Cruises"
-            />
-            <p>
-              Your gateway to exciting cruise ship career opportunities. We
-              connect talented individuals with world-class cruise lines.
-            </p>
-          </div>
-          <div className="news-footer-column">
-            <h4>Quick Links</h4>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/jobs">Jobs</Link>
-              </li>
-              <li>
-                <Link to="/news">News</Link>
-              </li>
-              <li>
-                <Link to="/about">About Us</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="news-footer-column">
-            <h4>Resources</h4>
-            <ul>
-              <li>
-                <a href="#apply">Application Guide</a>
-              </li>
-              <li>
-                <a href="#faq">FAQ</a>
-              </li>
-              <li>
-                <a href="#training">Training Programs</a>
-              </li>
-              <li>
-                <a href="#career">Career Advice</a>
-              </li>
-            </ul>
-          </div>
-          <div className="news-footer-column">
-            <h4>Contact</h4>
-            <ul>
-              <li>
-                <a href="mailto:info@ocearacruises.co.ke">
-                  info@ocearacruises.co.ke
-                </a>
-              </li>
-              <li>
-                <a href="tel:+254700000000">+254 700 000 000</a>
-              </li>
-              <li>
-                <a href="#nairobi">Nairobi, Kenya</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="news-footer-bottom">
-          <p>&copy; 2025 Oceara Cruises. All rights reserved.</p>
-          <div className="news-footer-social">
-            <Link to="https://facebook.com" aria-label="Facebook">
-              f
-            </Link>
-            <Link to="https://instagram.com" aria-label="Instagram">
-              in
-            </Link>
-            <Link to="https://linkedin.com" aria-label="LinkedIn">
-              Li
-            </Link>
-            <Link to="https://x.com" aria-label="Twitter">
-              X
-            </Link>
-          </div>
-        </div>
+      <footer className="content-footer">
+        <p className="content-footer-text">© 2026 Copyright Oceara Cruises</p>
       </footer>
     </div>
   );

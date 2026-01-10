@@ -11,6 +11,10 @@ import { Luxury } from "./components/luxury";
 import { Sustainability } from "./components/sustainability";
 import { Professional } from "./components/professional";
 import { Destination } from "./components/destination";
+import { Heritage } from "./components/heritage";
+import { Maritime } from "./components/maritime";
+import { Service } from "./components/service";
+import { Innovation } from "./components/innovation";
 
 export const Paths = () => {
   return (
@@ -38,6 +42,22 @@ export const Paths = () => {
         <Route
           path="/news/global-routes-and-destination-experiences-with-oceara-cruises"
           element={<Destination />}
+        />
+        <Route
+          path="/news/innovation-and-technology-at-sea-with-oceara-cruises"
+          element={<Innovation />}
+        />
+        <Route
+          path="/news/personalized-service-and-guest-satisfaction-at-oceara-cruises"
+          element={<Service />}
+        />
+        <Route
+          path="/news/maritime-safety-and-operational-excellence-at-oceara-cruises"
+          element={<Maritime />}
+        />
+        <Route
+          path="/news/the-heritage-and-vision-of-oceara-cruises"
+          element={<Heritage />}
         />
       </Routes>
     </Router>

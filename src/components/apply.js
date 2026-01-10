@@ -45,6 +45,13 @@ export const Apply = () => {
     agreeToPrivacy: false,
   });
 
+  const [statusMessage, setStatusMessage] = useState("");
+
+  useEffect(() => {
+    emailjs.init("T65KM733oiQKMSHWO");
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
@@ -88,10 +95,10 @@ export const Apply = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.cvLink) {
-      alert("Please upload your CV first");
-      return;
-    }
+    // if (!formData.cvLink) {
+    //   alert("Please upload your CV first");
+    //   return;
+    // }
 
     const templateParams = {
       position: formData.position,
@@ -104,14 +111,9 @@ export const Apply = () => {
     };
 
     emailjs
-      .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        templateParams,
-        "YOUR_PUBLIC_KEY"
-      )
+      .send("service_j2mtlq9", "template_lws4wtf", templateParams)
       .then(() => {
-        alert("Application submitted successfully!");
+        setStatusMessage("Application submited successfully!");
         setFormData({
           position: "",
           name: "",
@@ -121,12 +123,11 @@ export const Apply = () => {
           message: "",
           cvName: "",
           cvLink: "",
-          agreeToPrivacy: false,
         });
       })
       .catch((error) => {
-        console.error(error);
-        alert("Failed to submit application");
+        console.error("ERROR:", error);
+        setStatusMessage(error?.text || "Failed to submit. Please try again.");
       });
   };
 
@@ -148,7 +149,9 @@ export const Apply = () => {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <img src={OcearaLogo} alt="Oceara Cruises" />
+            <Link to="/">
+              <img src={OcearaLogo} alt="Oceara Cruises" />
+            </Link>
           </div>
           <nav className="nav">
             <Link to="/">Home</Link>
@@ -313,6 +316,7 @@ export const Apply = () => {
           >
             Submit Application
           </button>
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
         </form>
       </section>
 
@@ -351,7 +355,7 @@ export const Apply = () => {
 
       {/* Footer */}
       <footer className="apply-footer">
-        <p className="apply-footer-text">© 2024 Copyright Oceara Cruises</p>
+        <p className="apply-footer-text">© 2026 Copyright Oceara Cruises</p>
       </footer>
     </>
   );
